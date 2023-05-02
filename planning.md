@@ -4,6 +4,22 @@ Both [players] start with 3 [lives]. They lose a life if they mis-answer a [ques
 
 The game doesn’t end until one of the players loses all their lives. At this point, the game should announce who won and what the other player’s score is.
 
+## Example Prompt
+```Player 1: What does 5 plus 3 equal?
+> 9 
+Player 1: ...That is incorrect. Lose a life!
+Score: P1 - 2/3 lives / P2 - 3/3 lives 
+-- New Turn -- 
+Player 2: What does 2 plus 6 equal?
+> 8 
+Player 2: ...That is correct! 
+Score: P1 - 2/3 lives / P2 - 3/3 lives 
+-- New Turn -- 
+[eventually]
+Player 1 wins with a score of 1 life left
+-- GAME OVER -- 
+``` 
+
 ## Extracted Nouns for Classes 
 * players 
 * questions
@@ -15,8 +31,8 @@ The game doesn’t end until one of the players loses all their lives. At this p
 
 ## Question Class
 * question initiated (state)
-* question verified (method)
 * question generated (method)
+* question verified (method)
 
 ## Game Class
 * game initialized (state)
