@@ -28,9 +28,9 @@ class Game
 
 
   def winner 
-    if @player_1.lives == 0
+    if @player_1.lives == 0 
       @winner = @player_2
-    else 
+    elsif @player_2.lives == 0
       @winner = @player_1
     end
   end 
@@ -40,11 +40,13 @@ class Game
     puts "-- Game Over --"
     puts "#{@winner.name} wins with a score of #{@winner.lives}/3 lives!"
     puts "-- Goodbye --"
+  end 
+
 
   def play
     start_game
 
-    while @player_1.lives > 0 || @player_2.lives > 0 do
+    while @player_1.lives > 0 && @player_2.lives > 0 do
       puts "-- New Turn --"
       question = Question.new
       question.generate_question(@current_player.name)
@@ -63,5 +65,5 @@ class Game
     winner
     end_game
   end 
-  
+
 end 
